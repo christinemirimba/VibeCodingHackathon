@@ -65,3 +65,15 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* Footer Styles */
+.footer {
+    background-color: #1f2937;
+    color: #d1d5db;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #374151;
+}
+.footer p {
+    font-size: 0.875rem; /* text-sm */
+}
