@@ -10,14 +10,14 @@ from dotenv import load_dotenv
 # from intasend import IntaSend
 
 # Import the Config class from your config.py file
-from config import Config
+from config import settings
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Create a Flask application instance and load the configuration
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config.from_object(settings)
 
 # Get the API keys directly from environment variables
 openai_api_key = os.getenv("OPENAI_API_KEY")
