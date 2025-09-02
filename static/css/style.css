@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+/* Premium Access Card */
+.premium-card {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.premium-card h2 {
+    color: #fcd34d;
+}
+.premium-card p {
+    color: #d1d5db;
+}
+.premium-card ul {
+    list-style: none;
+    padding: 0;
+}
+.premium-card li {
+    color: #e5e7eb;
+}
+
+/* Premium Button */
+.premium-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.premium-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}

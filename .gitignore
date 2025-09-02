@@ -1,0 +1,13 @@
+Environment files
+.env
+
+Python specific files
+pycache/
+*.pyc
+venv/
+
+IDE specific files
+.vscode/
+
+Database files
+*.db

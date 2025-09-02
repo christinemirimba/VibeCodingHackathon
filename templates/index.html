@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+    <div class="container bg-white p-8 rounded-2xl shadow-lg mt-8 mb-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Recipe Recommender</h1>
+        <p class="text-center text-gray-600 mb-8">Enter ingredients you have on hand to get simple recipe suggestions.</p>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <input type="text" id="ingredientInput" class="flex-grow p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., chicken, tomatoes, onion">
+            <button id="searchButton" class="bg-blue-600 text-white btn hover:bg-blue-700">Get Recipes</button>
+        </div>
+
+        <div id="loadingIndicator" class="hidden text-center text-gray-500 text-lg">
+            Generating recipes...
+        </div>
+
+        <div id="errorIndicator" class="hidden text-center text-red-500 text-lg">
+            Something went wrong. Please try again.
+        </div>
+
+        <div id="recipesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Recipe cards will be injected here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Premium Access Section -->
+    <div class="container bg-white p-8 rounded-2xl shadow-lg mb-8 text-center premium-card">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Unlock Premium Access</h2>
+        <p class="text-gray-600 mb-6">Get unlimited recipe suggestions, save your favorites, and more!</p>
+        <ul class="text-left max-w-sm mx-auto mb-6 text-gray-700">
+            <li class="flex items-center mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Unlimited recipe generations
+            </li>
+            <li class="flex items-center mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Save and manage favorite recipes
+            </li>
+            <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                Ad-free experience
+            </li>
+        </ul>
+        <button id="premiumButton" class="premium-btn bg-yellow-500 text-white hover:bg-yellow-600 mt-4">Unlock Premium - KES 100</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="paymentModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <!-- Modal content -->
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white text-center">
+            <h3 class="text-lg font-bold text-gray-800">Payment Gateway</h3>
+            <div class="mt-2 px-7 py-3">
+                <p class="text-sm text-gray-500">This feature is not yet fully implemented. Please check back later!</p>
+            </div>
+            <div class="mt-4">
+                <button id="closeModalBtn" class="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
